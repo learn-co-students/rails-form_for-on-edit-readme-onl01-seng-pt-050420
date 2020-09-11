@@ -1,4 +1,6 @@
-# `form_for` on Edit
+.
+
+ # `form_for` on Edit
 
 If you know how to utilize the `form_tag` method for creating forms in Rails you may wonder why you need to learn a new form building process. Let's imagine that you've been tasked with creating the world's first pet hamster social network, and one of the requirements is that the hamster profile page needs to have about 100 different form fields that can be edited. If you are using the `form_tag` method, your application will be technically resubmitting all 100 fields each time you edit the data. Your form view templates will also have 100 calls to the `@hamster` instance variable and each of the hamster attributes. Thankfully `form_for` is here and will help clean up the form view template and provide some additional benefits that we'll explore in this lesson.
 
@@ -103,7 +105,7 @@ resources :posts, only: [:index, :show, :new, :create, :edit, :update]
 ```
 
 ```ruby
-patch 'posts/:id', to: 'posts#update'
+patch 'posts/:id', to: 'posts#update'`
 ```
 
 What's the difference between `PUT` and `PATCH`? It's pretty subtle. On a high level, `PUT` has the ability to update the entire object, whereas `PATCH` simply updates the elements that were changed. Many developers choose to utilize `PATCH` as much as possible because it requires less overhead; however, it is pretty rare when you will need to distinguish between the two verbs, and they are used interchangeably quite often.
